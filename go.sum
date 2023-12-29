@@ -2,5 +2,7 @@ github.com/google/uuid v1.5.0 h1:1p67kYwdtXjb0gL0BPiP1Av9wiZPo5A8z2cWkTZ+eyU=
 github.com/google/uuid v1.5.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/hexcraft-biz/her v0.0.6 h1:CZSWPRFHzGROANOQFCbHGqxKBrnKTDpJ7oJPSj7KyNg=
 github.com/hexcraft-biz/her v0.0.6/go.mod h1:ETdrgTyG2XoSncKpGmXSeqpTQR8ALX8S+wFZ44WgSZI=
+github.com/hexcraft-biz/xtime v0.0.3 h1:hq6u++YQVl8G9W8aMAFVsfTERayvKSV4KrZSOH8TL2o=
+github.com/hexcraft-biz/xtime v0.0.3/go.mod h1:sfoKKcRT7bgGBkKBMK3guIXkjwzXg52xmhswNa8mak8=
 github.com/hexcraft-biz/xuuid v0.0.2 h1:91STeyBDvz/Df7cTQpeTS0yc4x7LxqjsBTkazICPot4=
 github.com/hexcraft-biz/xuuid v0.0.2/go.mod h1:s48h62DSE8XY14OfDdD+U03B2UYDXHF+tkMxcLQhpvI=
