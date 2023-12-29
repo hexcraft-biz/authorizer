@@ -1,8 +1,6 @@
-github.com/google/uuid v1.4.0 h1:MtMxsa51/r9yyhkyLsVeVt0B+BGQZzpQiTQ4eHZ8bc4=
-github.com/google/uuid v1.4.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/google/uuid v1.5.0 h1:1p67kYwdtXjb0gL0BPiP1Av9wiZPo5A8z2cWkTZ+eyU=
 github.com/google/uuid v1.5.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/hexcraft-biz/her v0.0.6 h1:CZSWPRFHzGROANOQFCbHGqxKBrnKTDpJ7oJPSj7KyNg=
 github.com/hexcraft-biz/her v0.0.6/go.mod h1:ETdrgTyG2XoSncKpGmXSeqpTQR8ALX8S+wFZ44WgSZI=
-github.com/hexcraft-biz/xuuid v0.0.1 h1:CibTkJRBPMfEJLsXlvkq0AjcYRVVo+T4WNYCLWyAdUc=
-github.com/hexcraft-biz/xuuid v0.0.1/go.mod h1:+ES5k8l5kZBXU/B49F4ELYpq1uH3ypZm4Tv/JD7pw0s=
+github.com/hexcraft-biz/xuuid v0.0.2 h1:91STeyBDvz/Df7cTQpeTS0yc4x7LxqjsBTkazICPot4=
+github.com/hexcraft-biz/xuuid v0.0.2/go.mod h1:s48h62DSE8XY14OfDdD+U03B2UYDXHF+tkMxcLQhpvI=
