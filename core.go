@@ -3,11 +3,11 @@ package authorizer
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"net/http"
 	"net/url"
 	"os"
 
-	"github.com/hexcraft-biz/feature"
 	"github.com/hexcraft-biz/her"
 	"github.com/hexcraft-biz/xuuid"
 )
@@ -23,16 +23,20 @@ func New() (*Authorizer, error) {
 		return nil, err
 	}
 
+	headerInfix := os.Getenv("HEADER_INFIX")
+	if headerInfix == "" {
+		return nil, errors.New("Invalid header infix")
+	}
+
 	return &Authorizer{
 		AppCreeds:   appCreeds,
-		HeaderInfix: os.Getenv("HEADER_INFIX"),
+		HeaderInfix: headerInfix,
 	}, nil
 }
 
-func (a Authorizer) NewAmbit(eh *feature.EndpointHandler, custodianId, byCustodianId xuuid.UUID) *ambit {
+func (a Authorizer) NewAmbit(custodianId, byCustodianId xuuid.UUID) *ambit {
 	return &ambit{
 		Authorizer:          &a,
-		EndpointHandler:     eh,
 		CustodianId:         custodianId,
 		ByCustodianId:       byCustodianId,
 		accessRulesToCommit: accessRulesToCommit{},
@@ -41,7 +45,6 @@ func (a Authorizer) NewAmbit(eh *feature.EndpointHandler, custodianId, byCustodi
 
 type ambit struct {
 	*Authorizer
-	*feature.EndpointHandler
 	CustodianId   xuuid.UUID
 	ByCustodianId xuuid.UUID
 	accessRulesToCommit
@@ -59,11 +62,7 @@ func (a *ambit) Revoke(affectedEndpointId xuuid.UUID, rule string) {
 	a.accessRulesToCommit.add(ActionRevoke, rule, affectedEndpointId)
 }
 
-func (a ambit) Commit(headerInfix string) her.Error {
-	if headerInfix == "" {
-		return her.NewErrorWithMessage(http.StatusInternalServerError, "Header infix cannot be empty", nil)
-	}
-
+func (a ambit) Commit() her.Error {
 	rulesWithBehavior := a.toAccessRulesWithBehavior()
 
 	if len(rulesWithBehavior) > 0 {
