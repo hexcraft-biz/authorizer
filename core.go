@@ -29,7 +29,7 @@ func New() (*Authorizer, error) {
 	}, nil
 }
 
-func (a Authorizer) Begin(eh *feature.EndpointHandler, custodianId, byCustodianId xuuid.UUID) *ambit {
+func (a Authorizer) NewAmbit(eh *feature.EndpointHandler, custodianId, byCustodianId xuuid.UUID) *ambit {
 	return &ambit{
 		Authorizer:          &a,
 		EndpointHandler:     eh,
