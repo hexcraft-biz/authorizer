@@ -24,7 +24,8 @@ func (r *AccessRules) Scan(value any) error {
 	return json.Unmarshal(bytes, r)
 }
 
-func (r AccessRules) Value() (driver.Value, error) {
+func (r *AccessRules) Value() (driver.Value, error) {
+	r.RemoveRedundant()
 	return json.Marshal(r)
 }
 
